@@ -14,6 +14,7 @@ const App = () => {
       setInputItem('')
     }
   }
+  
     return (
       <div>
           <input type='text' value={ inputItem } onChange={ (e) => setInputItem(e.target.value) }/>
