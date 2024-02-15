@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ShoppingList from './conponents/ShoppingList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  const[inputItem, setInputItem] = useState('')
+  const[shoppingList, setShoppingList] = useState([])
+
+  const addItem = () => {
+    if (inputItem.trim() !== '') {
+      setShoppingList([
+        ...shoppingList,
+        inputItem
+      ])
+      setInputItem('')
+    }
+  }
+    return (
+      <div>
+          <input type='text' value={ inputItem } onChange={ (e) => setInputItem(e.target.value) }/>
+          <button onClick={ addItem }>추가</button>
+
+          <ShoppingList shoppingList={ shoppingList } />
+      </div>
   );
-}
+};
 
 export default App;
