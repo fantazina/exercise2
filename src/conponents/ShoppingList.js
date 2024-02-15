@@ -15,7 +15,7 @@ const ShoppingList = () => {
                     shoppingList.map((item, index) => ( 
                         <ShoppingItem key={ index } item={ item } onDelete={ onDeleteSet } /> 
                     ))
-                }
+                }          
         </div>
     );
 };
