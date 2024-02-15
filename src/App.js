@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ShoppingList from './conponents/ShoppingList';
+import styles from './css/Shopping.module.css';
 
 const App = () => {
   const[inputItem, setInputItem] = useState('')
@@ -16,7 +17,7 @@ const App = () => {
   }
   
     return (
-      <div>
+      <div className={ styles.S_list }>
           <input type='text' value={ inputItem } onChange={ (e) => setInputItem(e.target.value) }/>
           <button onClick={ addItem }>추가</button>
 

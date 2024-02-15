@@ -3,3 +3,38 @@
     height : 50px;
     border : 1px solid lightblue;
 } 
+.S_list {
+    text-align : center;
+}
+.S_list input {
+    margin-top : 50px;
+    height : 23px;
+    width : 200px;
+    border-radius: 5px !important;
+    border : none;    
+    background-color : whitesmoke;
+    box-shadow : 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.S_list input:focus {
+    outline : 2px solid lightblue;
+}
+.S_list button {
+    margin-left: 10px;
+    margin-top: 10px;
+    height : 25px;
+    width : 50px;
+    border : none;    
+    background-color: rightgray;
+    font-weight: bold;
+    transition : 0.4s;
+    border-radius: 5px !important;
+    cursor : pointer;
+
+}
+.S_list button:hover {
+    background-color: lightblue;
+    color: blanchedalmond;
+    transition : 0.4s;
+
+
+}
