@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import ShoppingItem from './ShoppingItem';
 import styles from '../css/Shopping.module.css';
 
-const ShoppingList = () => {
-    const[shoppingList,setShoppingList] = useState([])
+const ShoppingList = ({shoppingList, onShoppingList}) => {
 
-    const onDeleteSet = (itemDelete) => {
-        const updateItem = shoppingList.filter(item => item !== itemDelete)
-        setShoppingList(updateItem)
-    }
+    const onDeleteItem = (itemChk) => {
+        const updateList = shoppingList.filter(item => item !== itemChk )
+        onShoppingList(updateList)
+}
     return (
         <div className={ styles.S_list}>
             <h1>지나의 장보기 목록</h1>
                 {
                     shoppingList.map((item, index) => ( 
-                        <ShoppingItem key={ index } item={ item } onDelete={ onDeleteSet } /> 
+                        <ShoppingItem key={ item } item={ item } onDelItem={ onDeleteItem } /> 
                     ))
                 } 
         </div>
