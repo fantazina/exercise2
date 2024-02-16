@@ -18,7 +18,7 @@ const Shopping = () => {
     const addItem = () => {
       if(inputItem !== '') { 
       setShoppingList([...shoppingList, inputItem]) // 새로운 값을 추가(shoppingList, inputItem)
-      setInputItem('')
+      setInputItem('') // 입력 후 input창 초기화
   
       } else {
         alert('추가 내용 입력하기')

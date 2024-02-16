@@ -4,8 +4,8 @@ import styles from '../css/Shopping.module.css';
 
 const ShoppingList = ({shoppingList, onShoppingList}) => {
 
-    const onDeleteItem = (itemChk) => {
-        const updateList = shoppingList.filter(item => item !== itemChk )
+    const onDeleteItem = (delClick) => {
+        const updateList = shoppingList.filter(item => item !== delClick )
         onShoppingList(updateList)
 }
     return (
