@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../css/Shopping.module.css';
 
-const ShoppingItem = ({item, onDelItem}) => {
+const ShoppingItem = ({item, index, shoppingList, onShoppingList}) => {
 
-    const onDeleteClick = () => {  
-            onDelItem(item)
+    const onDeleteItem = (a) => {
+        const updateList = shoppingList.filter((item,index) => index !== a )
+        onShoppingList(updateList)
     }
+
     return (
-        <div className={ styles.addItem }>
-            { item }
-            <button onClick={ onDeleteClick }>삭제</button>
+        <div>
+            <div className={ styles.addItem }>
+                { item }
+                <button onClick={ () => onDeleteItem(index) }>삭제</button>
+            </div>
         </div>
     );
 };

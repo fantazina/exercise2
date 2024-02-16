@@ -4,16 +4,13 @@ import styles from '../css/Shopping.module.css';
 
 const ShoppingList = ({shoppingList, onShoppingList}) => {
 
-    const onDeleteItem = (delClick) => {
-        const updateList = shoppingList.filter(item => item !== delClick )
-        onShoppingList(updateList)
-}
     return (
         <div className={ styles.S_list}>
             <h1>지나의 장보기 목록</h1>
                 {
                     shoppingList.map((item, index) => ( 
-                        <ShoppingItem key={ item } item={ item } onDelItem={ onDeleteItem } /> 
+                        <ShoppingItem key={ index } item={ item } index={index} 
+                            shoppingList={shoppingList} onShoppingList={onShoppingList} /> 
                     ))
                 } 
         </div>
